@@ -23,6 +23,7 @@
                     <th>:</th>
                     <td>
                         <input type="text" name="kode" id="kode">
+                        <?= form_error('kode'); ?>
                     </td>
                 </tr>
                 <tr>
@@ -30,6 +31,7 @@
                     <td>:</td>
                     <td>
                         <input type="text" name="nama" id="nama">
+                        <?= form_error('nama'); ?>
                     </td>
                 </tr>
                 <tr>
@@ -42,6 +44,7 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
+                        <?= form_error('sks'); ?>
                     </td>
                 </tr>
                 <tr>
@@ -51,6 +54,7 @@
                 </tr>
             </table>
         </form>
+        
     </center>
 </body>
 
