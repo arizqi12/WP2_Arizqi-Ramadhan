@@ -135,10 +135,17 @@ public function registrasi()
 
     $this->ModelUser->simpanData($data); //menggunakan model
 
-    $this->session->set_flashdata('pesan', '<div 
-class="alert alert-success alert-message" role="alert">Selamat!! 
-akun member anda sudah dibuat. Silahkan Aktivasi Akun anda</div>'); 
-redirect('autentifikasi');
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Selamat!! akun member anda sudah dibuat. Silahkan Aktivasi Akun anda</div>'); 
+    redirect('autentifikasi');
 }
 }
+public function logout()
+{
+    // Hapus semua data sesi
+    $this->session->sess_destroy();
+    
+    // Redirect ke halaman login
+    redirect('autentifikasi');
+}
+
 }

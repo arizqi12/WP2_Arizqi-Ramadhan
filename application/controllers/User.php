@@ -20,7 +20,7 @@ class User extends CI_Controller
     {
         $data['judul'] = 'Data Anggota';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-        $this->db->where('role_id', 1);
+        $this->db->where('role_id', 2);
         $data['anggota'] = $this->db->get('user')->result_array();
 
         $this->load->view('templates/header', $data);
@@ -65,7 +65,7 @@ class User extends CI_Controller
 
                 if ($this->upload->do_upload('image')) {
                     $gambar_lama = $data['user']['image'];
-                    if ($gambar_lama != 'default.jpg') {
+                    if ($gambar_lama != 'arizqi.jpg') {
                         unlink(FCPATH . 'assets/img/profile/' . $gambar_lama);
                     }
 
@@ -82,6 +82,7 @@ class User extends CI_Controller
             redirect('user');
         }
     }
+
 
     public function ubahPassword()
     {
